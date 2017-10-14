@@ -1,0 +1,43 @@
+# database
+database:
+    host: localhost
+    table: facebook_message_murmured
+    username: root
+    password:
+
+# facebook configuration
+facebook:
+    graph-url: https://graph.facebook.com/v2.10/
+
+    # facebook app
+    app-id: app-id
+    app-secret: app-secret
+    long-live-token: long-live-app-token
+
+    # facebook page
+    fans-page-id: fans-page-id
+    fans-page-token: long-live-fans-page-token
+
+    # message platform
+    webhook-token: webhook-verify-token
+
+# datasource configuration
+spring:
+    datasource:
+        username: ${database.username}
+        password: ${database.password}
+        url: jdbc:mysql://${database.host}:3306/${database.table}?characterEncoding=utf-8&useUnicode=true&useSSL=false&rewriteBatchedStatements=TRUE
+
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
+        database: MYSQL
+        show_sql: false
+        hibernate:
+            ddl-auto: none
+
+# schedule indicates the frequency to poll data from different source
+# http://www.quartz-scheduler.org/documentation/quartz-2.2.x/configuration/
+# 要執行排程請自行改為 true
+quartz:
+    enabled: true
+
