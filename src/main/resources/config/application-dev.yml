@@ -5,22 +5,6 @@ database:
     username: root
     password:
 
-# facebook configuration
-facebook:
-    graph-url: https://graph.facebook.com/v2.10/
-
-    # facebook app
-    app-id: app-id
-    app-secret: app-secret
-    long-live-token: long-live-app-token
-
-    # facebook page
-    fans-page-id: fans-page-id
-    fans-page-token: long-live-fans-page-token
-
-    # message platform
-    webhook-token: webhook-verify-token
-
 # datasource configuration
 spring:
     datasource:
